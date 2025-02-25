@@ -2,8 +2,13 @@
 
 import { ArrowUpTrayIcon } from '@heroicons/react/24/outline';
 import { useState } from 'react';
+import { Funnel } from '../types/blocks';
 
-export default function UploadFile() {
+export default function UploadFile({
+	setFunnelData,
+}: {
+	setFunnelData: (funnel: Funnel) => void;
+}) {
 	const [jsonData, setJsonData] = useState(null);
 
 	const handleFile = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -30,8 +35,9 @@ export default function UploadFile() {
 		reader.onload = (e) => {
 			try {
 				const data = JSON.parse(e.target?.result as string);
-				setJsonData(data);
+				setFunnelData(data);
 			} catch (err) {
+				console.error(err);
 				alert('Error parsing JSON file.');
 			}
 		};

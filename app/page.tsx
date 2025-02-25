@@ -1,6 +1,13 @@
-import MobilePreview from './components/MobilePreview';
+'use client';
+
+import { useState } from 'react';
+import MobilePreview from './components/mobile-preview';
+import { Funnel } from './types/blocks';
 import UploadFile from './components/UploadFile';
+
 export default function Home() {
+	const [funnelData, setFunnelData] = useState<Funnel | null>(null);
+
 	return (
 		<div className="flex flex-col items-center justify-center mt-10 mx-10">
 			<h1 className="text-4xl font-bold my-4">Funnel Builder</h1>
@@ -9,11 +16,10 @@ export default function Home() {
 					This is some introduction text that I will update later to describe
 					how the app works.
 				</p>
-
 			</div>
-			<div className="grid grid-cols-3 gap-4 mt-10">
-				<UploadFile />
-				<MobilePreview />
+			<div className="flex flex-col gap-4">
+				<MobilePreview funnelData={funnelData} />
+				<UploadFile setFunnelData={setFunnelData} />
 			</div>
 		</div>
 	);
