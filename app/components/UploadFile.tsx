@@ -70,19 +70,19 @@ export default function UploadFile({
 				</>
 			) : (
 				<button
-					className="p-4 bg-blue-500 text-white rounded-lg flex flex-row items-center font-extrabold"
-					onClick={() => setJsonData(null)}
+					className="p-4 bg-perspectiveBlue hover:bg-perspectiveBlue/80 text-white rounded-lg flex flex-row items-center font-extrabold"
+					onClick={() => setFunnelData(null)}
 				>
-					<ArrowUpTrayIcon className="size-4 mr-2" />
+					<ArrowUpTrayIcon className="size-6 mr-2" />
 					Upload A Different File
 				</button>
 			)}
 
-			{jsonData && (
-				<div className="w-full max-w-4xl max-h-96 overflow-auto bg-gray-100 p-4 border border-gray-300 rounded-md whitespace-pre-wrap break-words">
-					<pre>{JSON.stringify(jsonData, null, 4)}</pre>
+			{/* {funnelData && (
+				<div className="w-full overflow-auto bg-gray-100 p-4 border border-gray-300 rounded-md whitespace-pre-wrap break-words">
+					<pre>{JSON.stringify(funnelData, null, 4)}</pre>
 				</div>
-			)}
+			)} */}
 		</div>
 	);
 }

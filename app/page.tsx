@@ -4,23 +4,37 @@ import { useState } from 'react';
 import MobilePreview from './components/mobile-preview';
 import { Funnel } from './types/blocks';
 import UploadFile from './components/UploadFile';
-
+import Image from 'next/image';
 export default function Home() {
 	const [funnelData, setFunnelData] = useState<Funnel | null>(null);
 
 	return (
-		<div className="flex flex-col items-center justify-center mt-10 mx-10">
-			<h1 className="text-4xl font-bold my-4">Perspective Funnel Builder</h1>
+		<div className="flex flex-col md:flex-row mt-10 mx-2 md:mx-10">
 			<div>
-				<p>
-					We put the <strong>fun</strong> back into mobile funnels.
+				<h1 className="text-6xl font-bold my-4 leading-tight">
+					Build your funnel in{' '}
+					<span className="text-perspectiveBlue">minutes</span>, not{' '}
+					<span className="text-perspectiveRed">hours</span>.
+				</h1>
+				<p className="text-2xl">
+					Upload your JSON file and we&apos;ll handle the rest.
 				</p>
+				<p className="text-xl mt-4"></p>
+				<UploadFile funnelData={funnelData} setFunnelData={setFunnelData} />
+				<div className="mt-4 flex flex-row gap-4">
+					<Image
+						src="/assets/logo.png"
+						alt="Perspective Logo"
+						width={50}
+						height={50}
+					/>
+					<p className="text-xl">
+						Learn more how Perspective can take your business to the next level.
+					</p>
+
+				</div>
 			</div>
-			<div className="flex flex-col gap-4 w-full">
-				<MobilePreview funnelData={funnelData} />
-				<UploadFile setFunnelData={setFunnelData} />
-			</div>
+			<MobilePreview funnelData={funnelData} />
 		</div>
 	);
 }
-
