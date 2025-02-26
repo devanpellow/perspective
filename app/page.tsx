@@ -33,7 +33,7 @@ export default function Home() {
 						height={50}
 					/>
 					<a
-						href="https://perspective.so"
+						href="https://perspective.co"
 						className="text-lg hover:underline "
 						target="_blank"
 						rel="noopener noreferrer"
