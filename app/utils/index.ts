@@ -16,3 +16,10 @@ export const getDeviceWidthStyles = (
 			return 'w-full sm:w-1/2 lg:w-[375px] h-[600px]';
 	}
 };
+
+export const getIsDarkBackground = (bgColor: string) => {
+	const red = parseInt(bgColor.slice(1, 3), 16);
+	const green = parseInt(bgColor.slice(3, 5), 16);
+	const blue = parseInt(bgColor.slice(5, 7), 16);
+	return red * 0.299 + green * 0.587 + blue * 0.114 > 186;
+};

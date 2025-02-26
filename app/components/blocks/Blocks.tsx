@@ -1,12 +1,15 @@
 import { Block } from '@/app/types/blocks';
-import React from 'react';
+import React, { use } from 'react';
 import TextBlock from './TextBlock';
 import ImageBlock from './ImageBlock';
 import ButtonBlock from './ButtonBlock';
 import ListBlock from './ListBlock';
 import BlockWrapper from './BlockWrapper';
+import { getIsDarkBackground } from '@/app/utils';
 
-function Blocks({ block }: { block: Block }) {
+function Blocks({ block, bgColor }: { block: Block; bgColor: string }) {
+	const isDarkBackground = getIsDarkBackground(bgColor);
+
 	switch (block.type) {
 		case 'text':
 			return (
@@ -29,7 +32,7 @@ function Blocks({ block }: { block: Block }) {
 		case 'list':
 			return (
 				<BlockWrapper>
-					<ListBlock block={block} />
+					<ListBlock block={block} isDarkBackground={isDarkBackground} />
 				</BlockWrapper>
 			);
 		default:

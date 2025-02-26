@@ -50,7 +50,13 @@ function MobilePreview({ funnelData }: { funnelData: Funnel | null }) {
 												style={{ backgroundColor: funnelData.bgColor }}
 											>
 												{currentPage?.blocks.map((block) => {
-													return <Blocks key={block.id} block={block} />;
+													return (
+														<Blocks
+															key={block.id}
+															block={block}
+															bgColor={funnelData.bgColor}
+														/>
+													);
 												})}
 											</div>
 										</div>

@@ -8,12 +8,12 @@ function ImageBlock({ block }: { block: ImageBlockType }) {
 	return (
 		<div className="flex items-center justify-center">
 			<Image
-				className="object-contain"
+				className="object-contain rounded-lg shadow-lg"
 				src={src}
 				alt={alt ?? 'Funnel Image'}
 				aria-label={alt ?? 'Funnel Image'}
-				width={100}
-				height={100}
+				width={200}
+				height={200}
 				loading="lazy"
 			/>
 		</div>
