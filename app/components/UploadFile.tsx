@@ -44,11 +44,11 @@ export default function UploadFile({
 	};
 
 	return (
-		<div className="flex flex-col items-center mt-12">
+		<div className="flex flex-col items-center mt-4 lg:mt-12">
 			{!funnelData ? (
 				<>
 					<div
-						className="w-full h-52 border-2 border-dashed border-black flex justify-center items-center text-white text-xl font-bold text-center cursor-pointer mb-4 rounded-lg bg-perspectiveYellow/80 hover:bg-perspectiveYellow"
+						className="w-full h-32 md:h-52 border-2 border-dashed border-black flex justify-center items-center text-white text-xl font-bold text-center cursor-pointer mb-4 rounded-lg bg-perspectiveYellow/80 hover:bg-perspectiveYellow transition-all duration-300 ease-in-out"
 						onClick={() => document?.getElementById('file-input')?.click()}
 						onDragOver={(e) => {
 							e.preventDefault();

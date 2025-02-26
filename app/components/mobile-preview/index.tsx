@@ -19,7 +19,7 @@ function MobilePreview({ funnelData }: { funnelData: Funnel | null }) {
 	);
 
 	return (
-		<div className="w-full">
+		<div className="w-full mt-4 lg:mt-0">
 			<DeviceSizeSelector
 				screenSize={screenSize}
 				setScreenSize={setScreenSize}
@@ -33,7 +33,7 @@ function MobilePreview({ funnelData }: { funnelData: Funnel | null }) {
 						pageIndex={pageIndex}
 					>
 						<div
-							className={`relative w-[375px] h-[680px] rounded-[40px] bg-black shadow-2xl p-3 transition-all duration-300 ease-in-out ${getDeviceWidthStyles(
+							className={`relative w-[375px] h-[480px] md:h-[680px] rounded-[40px] bg-black shadow-2xl p-3 transition-all duration-300 ease-in-out ${getDeviceWidthStyles(
 								screenSize
 							)}`}
 						>
