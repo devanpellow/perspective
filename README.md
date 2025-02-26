@@ -1,8 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Funnel Preview App
 
-## Getting Started
+This is a simple app that allows you to preview your funnel by uploading a JSON file.
+You can find the test JSON file in the [data](data/funnel-data.json) folder.
 
-First, run the development server:
+You can find the live app [here](https://perspective.co/funnel-preview).
+
+## Running the app locally
+
+Clone the repository:
+
+```bash
+git clone https://github.com/devanpellow/perspective.git
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the development server:
 
 ```bash
 npm run dev
