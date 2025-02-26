@@ -1,16 +1,15 @@
 'use client';
 
 import { ArrowUpTrayIcon } from '@heroicons/react/24/outline';
-import { useState } from 'react';
 import { Funnel } from '../types/blocks';
 
 export default function UploadFile({
+	funnelData,
 	setFunnelData,
 }: {
-	setFunnelData: (funnel: Funnel) => void;
+	funnelData: Funnel | null;
+	setFunnelData: (funnel: Funnel | null) => void;
 }) {
-	const [jsonData, setJsonData] = useState(null);
-
 	const handleFile = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const file = event.target.files?.[0];
 		if (file && file.type === 'application/json') {
@@ -46,18 +45,19 @@ export default function UploadFile({
 
 	return (
 		<div className="flex flex-col items-center mt-12">
-			{!jsonData ? (
+			{!funnelData ? (
 				<>
 					<div
-						className="w-52 h-32 border-2 border-dashed border-gray-400 flex justify-center items-center text-gray-500 text-center cursor-pointer mb-4 rounded-lg hover:bg-gray-50"
+						className="w-full h-52 border-2 border-dashed border-black flex justify-center items-center text-white text-xl font-bold text-center cursor-pointer mb-4 rounded-lg bg-perspectiveYellow/80 hover:bg-perspectiveYellow"
 						onClick={() => document?.getElementById('file-input')?.click()}
 						onDragOver={(e) => {
 							e.preventDefault();
-							e.currentTarget.style.borderColor = '#888';
+							e.currentTarget.style.borderColor = 'rgb(251, 88, 90)';
 						}}
 						onDragLeave={(e) => (e.currentTarget.style.borderColor = '#ccc')}
 						onDrop={handleDrop}
 					>
+						<ArrowUpTrayIcon className="size-6 mr-2" />
 						Click or Drop JSON File
 					</div>
 					<input
