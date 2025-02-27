@@ -80,7 +80,10 @@ export default function UploadFile({
 				<div className="flex flex-col items-center gap-4">
 					<button
 						className="p-4 bg-perspectiveBlue hover:bg-perspectiveBlue/80 text-white rounded-lg flex flex-row items-center font-extrabold"
-						onClick={() => setFunnelData(null)}
+						onClick={() => {
+							setFunnelData(null);
+							setError(null);
+						}}
 					>
 						<ArrowUpTrayIcon className="size-6 mr-2" />
 						Upload A Different File

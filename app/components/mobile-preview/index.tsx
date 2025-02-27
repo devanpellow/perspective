@@ -19,12 +19,12 @@ function MobilePreview({ funnelData }: { funnelData: Funnel | null }) {
 	);
 
 	return (
-		<div className="w-full mt-4 lg:mt-0 lg:pl-40">
+		<div className="w-full mt-4 lg:mt-0 lg:mb-4">
 			<DeviceSizeSelector
 				screenSize={screenSize}
 				setScreenSize={setScreenSize}
 			/>
-			<div className="flex flex-row items-center justify-center rounded-lg">
+			<div className="flex items-center justify-center rounded-lg">
 				<>
 					<PageNavigationWrapper
 						canGoBack={canGoBack}
@@ -42,7 +42,7 @@ function MobilePreview({ funnelData }: { funnelData: Funnel | null }) {
 							</div>
 							<div className="w-full h-full overflow-hidden rounded-[32px] bg-white">
 								{funnelData ? (
-									<div className="flex flex-row w-full h-full">
+									<div className="flex w-full h-full">
 										<div className="w-full h-full">
 											<UrlBar title={funnelData.name} />
 											<div
@@ -62,7 +62,7 @@ function MobilePreview({ funnelData }: { funnelData: Funnel | null }) {
 										</div>
 									</div>
 								) : (
-									<div className="w-full h-full p-1">
+									<div className="p-1">
 										<video
 											className="w-full h-full object-cover"
 											loop
