@@ -19,7 +19,7 @@ function MobilePreview({ funnelData }: { funnelData: Funnel | null }) {
 	);
 
 	return (
-		<div className="w-full mt-4 lg:mt-0 lg:mb-4">
+		<div className="w-full mt-4 lg:mt-0 lg:mb-4 lg:pl-40">
 			<DeviceSizeSelector
 				screenSize={screenSize}
 				setScreenSize={setScreenSize}
