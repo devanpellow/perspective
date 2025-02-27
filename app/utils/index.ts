@@ -21,6 +21,7 @@ export const getIsDarkBackground = (bgColor: string) => {
 	const blue = parseInt(bgColor.slice(5, 7), 16);
 	return red * 0.299 + green * 0.587 + blue * 0.114 > 186;
 };
+
 export const getIsTypeFunnel = (data: unknown): data is Funnel => {
 	return (
 		typeof data === 'object' &&
