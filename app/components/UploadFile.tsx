@@ -2,7 +2,8 @@
 
 import { ArrowUpTrayIcon } from '@heroicons/react/24/outline';
 import { Funnel } from '../types/blocks';
-
+import { useState } from 'react';
+import { getIsTypeFunnel } from '../utils';
 export default function UploadFile({
 	funnelData,
 	setFunnelData,
@@ -10,12 +11,14 @@ export default function UploadFile({
 	funnelData: Funnel | null;
 	setFunnelData: (funnel: Funnel | null) => void;
 }) {
+	const [error, setError] = useState<string | null>(null);
+
 	const handleFile = (event: React.ChangeEvent<HTMLInputElement>) => {
 		const file = event.target.files?.[0];
 		if (file && file.type === 'application/json') {
 			parseJSON(file);
 		} else {
-			alert('Please upload a valid JSON file.');
+			setError('Please upload a valid JSON file.');
 		}
 	};
 
@@ -25,7 +28,7 @@ export default function UploadFile({
 		if (file && file.type === 'application/json') {
 			parseJSON(file);
 		} else {
-			alert('Please upload a valid JSON file.');
+			setError('Please upload a valid JSON file.');
 		}
 	};
 
@@ -34,10 +37,14 @@ export default function UploadFile({
 		reader.onload = (e) => {
 			try {
 				const data = JSON.parse(e.target?.result as string);
-				setFunnelData(data);
+				if (getIsTypeFunnel(data)) {
+					setFunnelData(data);
+				} else {
+					setError('Invalid JSON file.');
+				}
 			} catch (err) {
 				console.error(err);
-				alert('Error parsing JSON file.');
+				setError('Error parsing JSON file.');
 			}
 		};
 		reader.readAsText(file);
@@ -67,6 +74,7 @@ export default function UploadFile({
 						style={{ display: 'none' }}
 						onChange={handleFile}
 					/>
+					{error && <div className="text-red-500 text-sm">{error}</div>}
 				</>
 			) : (
 				<div className="flex flex-col items-center gap-4">
