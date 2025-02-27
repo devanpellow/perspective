@@ -59,8 +59,14 @@ npm run dev
 ## Validation
 
 - I would add a more robust validation function to check if the funnel JSON file is valid. Using a library like `zod`. For now I've just created a helper function that parses the JSON file.
-## Key Features
+
+## File Optimization
+
+- In a future iteration I would extract the Mobile Preview Wrapper into a separate component so that it becomes possible to show different device shapes like iPhone, Samsung, or desktop.
+
+# Key Features
 
 - I created a helper function to check if the funnel background is dark or light so any colours not passed by the funnel JSON file will be automatically have the correct contrast. [Link](https://github.com/devanpellow/perspective/blob/main/app/utils/index.ts#L16) to helper function.
 - I created a `BlockWrapper` component that wraps each block so that in the future if we wanted to pass props to each block like padding, margin, border, background color, etc it would be easier to do so. [Link](https://github.com/devanpellow/perspective/blob/main/app/components/blocks/BlockWrapper.tsx) to `BlockWrapper` component.
 - I created a `DeviceSizeSelector` component that allows you to select the device size you want to preview the funnel on. [Link](https://github.com/devanpellow/perspective/blob/main/app/components/mobile-preview/DeviceSizeSelector.tsx) to `DeviceSizeSelector` component.
+- I created a JSON object check function to check if the funnel JSON file matches the expected format. [Link](https://github.com/devanpellow/perspective/blob/main/app/utils/index.ts#L24) to helper function.
