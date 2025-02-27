@@ -25,33 +25,39 @@ Run the development server:
 npm run dev
 ```
 
+# Comments
+
+I really enjoyed this technical challenge. It was a lot of fun building a mobile preview, certainly a lot of directions to take this. I could imagine a scenario where users could drag and reorder blocks, edit text, update colours, etc. However, this would require copying and updating the JSON file.
+
+I didn't get too carried away with styling the blocks, but I did best to make it look modern and appealing to users. I tried to make the application itself intuitive and easy to use for users.
+
 # Future Considerations
 
 ## Testing
 
 - Add tests for the app. I would implement both Jest and React Testing Library. I would choose this approach because the test run very quickly and they are able to cover both the UI and the logic of the app. It's also possible to set up Cypress tests to cover the app, this would allow us to test the app as a user would use it. However, I would only do this if the app is getting more complex and we need to test the user experience.
 - I would test the following scenarios in the app:
-    - File Upload:
-        - Renders upload component when no file is uploaded
-        - Renders preview component when file is uploaded
-        - Renders error message when invalid file type is uploaded
-        - Renders error when JSON cannot be parsed
-    - Preview:
-        - Renders correct blocks
-        - Renders correct styles
-        - Renders correct data
-    - Page Navigation:
-        - Renders correct page when navigating to a different page
-        - Disables back navigation when at the first page
-        - Disables forward navigation when at the last page
-    - Device Size:
-        - Renders correct device size
-        - Renders correct styles for the selected device size
-    - Blocks:
-        - Renders correct block type
-        - Renders correct block data
-        - Renders correct block styles
-        
+  - File Upload:
+    - Renders upload component when no file is uploaded
+    - Renders preview component when file is uploaded
+    - Renders error message when invalid file type is uploaded
+    - Renders error when JSON cannot be parsed
+  - Preview:
+    - Renders correct blocks
+    - Renders correct styles
+    - Renders correct data
+  - Page Navigation:
+    - Renders correct page when navigating to a different page
+    - Disables back navigation when at the first page
+    - Disables forward navigation when at the last page
+  - Device Size:
+    - Renders correct device size
+    - Renders correct styles for the selected device size
+  - Blocks:
+    - Renders correct block type
+    - Renders correct block data
+    - Renders correct block styles
+
 ## Storybook
 
 - I would add storybook to the project. This would allow us to create variants of each component and see how they look in different states by passing in mocked data, without having to upload a JSON file.
