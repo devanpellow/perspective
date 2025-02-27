@@ -40,11 +40,11 @@ export default function UploadFile({
 				if (getIsTypeFunnel(data)) {
 					setFunnelData(data);
 				} else {
-					setError('Invalid JSON file.');
+					setError('Oops! This is not a valid funnel JSON file.');
 				}
 			} catch (err) {
 				console.error(err);
-				setError('Error parsing JSON file.');
+				setError('Error parsing JSON file. Try again!');
 			}
 		};
 		reader.readAsText(file);
